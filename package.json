@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "build": "tsc --build packages.tsconfig.json"
+  },
   "devDependencies": {
     "lerna": "^3.14.1"
   }

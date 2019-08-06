@@ -1,0 +1,34 @@
+{
+  "name": "@stackeat/diagnostics-framework",
+  "version": "0.1.0",
+  "description": "> TODO: description",
+  "author": "Eduard Malakhov <eduard@stackeat.com>",
+  "homepage": "https://github.com/stackeat/diagnostics#readme",
+  "license": "ISC",
+  "main": "lib/exports.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stackeat/diagnostics.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/stackeat/diagnostics/issues"
+  },
+  "devDependencies": {
+    "@zerollup/ts-transform-paths": "^1.7.3",
+    "ttypescript": "^1.5.7",
+    "typescript": "^3.5.3"
+  }
+}

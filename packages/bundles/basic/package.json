@@ -1,5 +1,5 @@
 {
-  "name": "@stackeat/diagnostics-framework",
+  "name": "@stackeat/diagnostics-basic-bundle",
   "version": "0.1.0",
   "description": "> TODO: description",
   "author": "Eduard Malakhov <eduard@stackeat.com>",
@@ -30,5 +30,11 @@
     "@zerollup/ts-transform-paths": "^1.7.3",
     "ttypescript": "^1.5.7",
     "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "@stackeat/diagnostics-framework": "^0.1.0",
+    "inversify": "^5.0.1",
+    "moment": "^2.24.0",
+    "reflect-metadata": "^0.1.13"
   }
 }

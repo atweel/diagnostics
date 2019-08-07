@@ -2,10 +2,13 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "build": "tsc --build packages.tsconfig.json",
-    "watch": "tsc --build --watch packages.tsconfig.json"
+    "build": "ttsc --build packages.tsconfig.json",
+    "watch": "ttsc --build --watch packages.tsconfig.json",
+    "demo": "node-dev --respawn packages/demo/app/entrypoint.js"
   },
   "devDependencies": {
-    "lerna": "^3.14.1"
+    "lerna": "^3.14.1",
+    "ttypescript": "^1.5.7",
+    "typescript": "^3.5.3"
   }
 }

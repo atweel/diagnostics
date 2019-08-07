@@ -1,7 +1,8 @@
 {
     "references": [
         { "path": "packages/framework" },
-        { "path": "packages/bundles/basic" }
+        { "path": "packages/bundles/basic" },
+        { "path": "packages/demo" }
     ],
     "exclude": [
         "**/*"

@@ -1,5 +1,5 @@
 {
-  "extends": "../../../default.tsconfig.json",
+  "extends": "../../../../default.tsconfig.json",
   "compilerOptions": {
     /* Basic Options */
     // "incremental": true,                   /* Enable incremental compilation */
@@ -45,7 +45,9 @@
     "paths": {
       "conventions/*": ["conventions/*"],
       "errors/*": ["errors/*"],
-      "components/*": ["components/*"]
+      "components/*": ["components/*"],
+      "capabilities": ["capabilities"],
+      "bindings": ["bindings"]
     }     
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     // "typeRoots": [],                       /* List of folders to include type definitions from. */
@@ -66,6 +68,6 @@
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
   },
   "references": [
-    { "path": "../../framework" }
+    { "path": "../../core" }
 ],
 }

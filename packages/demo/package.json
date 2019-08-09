@@ -32,8 +32,8 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@stackeat/diagnostics-basic-bundle": "^0.1.0",
-    "@stackeat/diagnostics-framework": "^0.1.0",
+    "@stackeat/diagnostics-console": "^0.1.0",
+    "@stackeat/diagnostics": "^0.1.0",
     "inversify": "^5.0.1",
     "moment": "^2.24.0",
     "reflect-metadata": "^0.1.13"

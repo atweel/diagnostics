@@ -1,5 +1,5 @@
 {
-  "name": "@stackeat/diagnostics-basic-bundle",
+  "name": "@stackeat/diagnostics-console",
   "version": "0.1.0",
   "description": "> TODO: description",
   "author": "Eduard Malakhov <eduard@stackeat.com>",
@@ -32,7 +32,8 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@stackeat/diagnostics-framework": "^0.1.0",
+    "@stackeat/diagnostics": "^0.1.0",
+    "@stackeat/extensibility": "^0.1.2",
     "inversify": "^5.0.1",
     "moment": "^2.24.0",
     "reflect-metadata": "^0.1.13"

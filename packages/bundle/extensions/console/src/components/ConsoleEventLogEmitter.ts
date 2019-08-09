@@ -1,11 +1,11 @@
 // tslint:disable: no-console
 
 import {
-    Capabilities as FrameworkCapabilities,
+    DiagnosticEventEmitter,
     EventCategory,
-    EventLogEmitter,
     LogEventFormatter,
-} from '@stackeat/diagnostics-framework';
+} from '@stackeat/diagnostics';
+import capabilities from 'capabilities';
 import {
     inject,
     injectable,
@@ -16,12 +16,8 @@ type CategorySpecificWriterMap = {
     [category in EventCategory]: (message: string) => void;
 };
 
-const Capabilities = {
-    ...FrameworkCapabilities,
-};
-
 @injectable()
-class ConsoleEventLogEmitter implements EventLogEmitter {
+class ConsoleEventLogEmitter implements DiagnosticEventEmitter {
 
     private readonly categorySpecificWriters: CategorySpecificWriterMap = {
         DEBUG: console.debug,
@@ -30,7 +26,7 @@ class ConsoleEventLogEmitter implements EventLogEmitter {
         WARNING: console.warn,
     };
     constructor(
-        @inject(Capabilities.LOG_EVENT_FORMATTER)
+        @inject(capabilities.DIAGNOSTIC_EVENT_FORMATTER)
         private readonly formatter: LogEventFormatter,
     ) {
 

@@ -2,8 +2,8 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "build": "ttsc --build packages.tsconfig.json",
-    "watch": "ttsc --build --watch packages.tsconfig.json",
+    "build": "ttsc --build solution.tsconfig.json",
+    "watch": "ttsc --build --watch solution.tsconfig.json",
     "demo": "node-dev --respawn packages/demo/app/entrypoint.js"
   },
   "devDependencies": {

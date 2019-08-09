@@ -1,22 +1,17 @@
 import {
-    Capabilities as FrameworkCapabilities,
     Diagnostics,
-} from '@stackeat/diagnostics-framework';
+} from '@stackeat/diagnostics';
+import capabilities from 'capabilities';
+import { Dependency } from 'components/Dependency';
 import { inject, injectable, named } from 'inversify';
 import 'reflect-metadata';
-import { ApplicationError } from './ApplicationError';
-import { Dependency } from './Dependency';
-
-const Capabilities = {
-    ...FrameworkCapabilities,
-};
 
 @injectable()
 class Application {
     constructor(
-        @inject(Dependency) @named('dependency')
+        @inject(Dependency) @named('Dependency')
         private readonly component: Dependency,
-        @inject(Capabilities.DIAGNOSTICS)
+        @inject(capabilities.DIAGNOSTICS)
         private readonly diagnostics: Diagnostics,
     ) {
 

@@ -1,7 +1,7 @@
 {
     "references": [
-        { "path": "packages/framework" },
-        { "path": "packages/bundles/basic" },
+        { "path": "packages/bundle/core" },
+        { "path": "packages/bundle/extensions/console" },
         { "path": "packages/demo" }
     ],
     "exclude": [

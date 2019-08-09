@@ -1,6 +1,6 @@
 import { Moment } from 'moment';
 
-import { EventCategory } from 'conventions/EventLogEmitter';
+import { EventCategory } from 'conventions/DiagnosticEventEmitter';
 
 type LogEventFormatter = (timestamp: Moment,
                           category: EventCategory,
@@ -53,8 +53,7 @@ function formatEventAsLongFlexibleText(timestamp: Moment                        
     return [
         timestamp.format('HH:mm:ss.SSS'),
         categoryLiterals[category],
-        origin ? origin + ':' : '',
-        message,
+        (origin ? origin + ': ' : '') + message,
         tags.length ? '[' + tags.join(', ') + ']' : '',
     ].join(' ');
 }

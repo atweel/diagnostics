@@ -1,20 +1,21 @@
 import {
-    Capabilities as FrameworkCapabilities,
     Diagnostics,
-} from '@stackeat/diagnostics-framework';
+} from '@stackeat/diagnostics';
+import capabilities from 'capabilities';
 import { Application } from 'components/Application';
+import container from 'container';
 import 'reflect-metadata';
-import container from './container';
-
-const Capabilities = {
-    ...FrameworkCapabilities,
-};
 
 // tslint:disable-next-line: no-console
 console.clear();
 
-container.get<Diagnostics>(Capabilities.DIAGNOSTICS)
+//  This demonstrates how a diagnostic message looks like when Diagnostics is initialized
+//  outside a named component.
+container.get<Diagnostics>(capabilities.DIAGNOSTICS)
     .notify('Initializing...');
 
-container.getNamed<Application>(Application, 'application')
+//  Since Application is the root of our component hierarchy, there is no way for us to set a name for it
+//  other than by instantiating it from the container with 'getNamed'. Please note that diagnostic messages
+//  in the console from Application are labeled with 'Application'.
+container.getNamed<Application>(Application, 'Application')
     .execute();

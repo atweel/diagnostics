@@ -1,20 +1,15 @@
-import {
-    BasicAnonymousOriginDiagnostics,
-    ConsoleEventLogEmitter,
-    createBasicNamedOriginDiagnostics,
-} from '@stackeat/diagnostics-basic-bundle';
-import {
+import diagnostics, {
     BuiltInLogEventFormatters,
-    Capabilities as FrameworkCapabilities,
-    Diagnostics,
-} from '@stackeat/diagnostics-framework';
+} from '@stackeat/diagnostics';
+import consoleDiagnostics, {
+    ConsoleEventLogEmitter,
+} from '@stackeat/diagnostics-console';
+import capabilities from 'capabilities';
 import { Application } from 'components/Application';
 import { Dependency } from 'components/Dependency';
 import { Container } from 'inversify';
 
-const Capabilities = {
-    ...FrameworkCapabilities,
-};
+diagnostics.use(consoleDiagnostics);
 
 const container: Container = new Container();
 
@@ -24,18 +19,12 @@ container.bind(Application)
 container.bind(Dependency)
     .toSelf();
 
-container.bind<Diagnostics>(Capabilities.DIAGNOSTICS)
-    .toDynamicValue(createBasicNamedOriginDiagnostics)
-    .when((request) => !!request.parentRequest && request.parentRequest.target.isNamed());
-
-container.bind(Capabilities.DIAGNOSTICS)
-    .to(BasicAnonymousOriginDiagnostics)
-    .when((request) => !request.parentRequest || !request.parentRequest.target.isNamed());
-
-container.bind(Capabilities.EVENT_LOG_EMITTER)
+container.bind(capabilities.DIAGNOSTIC_EVENT_EMITTER)
     .to(ConsoleEventLogEmitter);
 
-container.bind(Capabilities.LOG_EVENT_FORMATTER)
-    .toConstantValue(BuiltInLogEventFormatters.LONG_STRICT_TEXT);
+container.bind(capabilities.DIAGNOSTIC_EVENT_FORMATTER)
+    .toConstantValue(BuiltInLogEventFormatters.LONG_FLEXIBLE_TEXT);
+
+diagnostics.injectContainerModules(container);
 
 export default container;

@@ -45,7 +45,10 @@
     "paths": {
       "conventions/*": ["conventions/*"],
       "errors/*": ["errors/*"],
-      "components/*": ["components/*"]
+      "components/*": ["components/*"],
+      "capabilities": ["capabilities"],
+      "bindings": ["bindings"],
+      "container": ["container"]
     }                          /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     // "typeRoots": [],                       /* List of folders to include type definitions from. */
@@ -66,7 +69,7 @@
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
   },
   "references": [
-    { "path": "../framework" },
-    { "path": "../bundles/basic" }
+    { "path": "../bundle/core" },
+    { "path": "../bundle/extensions/console" }
   ]
 }

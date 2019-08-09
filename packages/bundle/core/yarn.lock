@@ -2,6 +2,14 @@
 # yarn lockfile v1
 
 
+"@stackeat/extensibility@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@stackeat/extensibility/-/extensibility-0.1.2.tgz#c494090b38e85578d7a9083ff033a229fce3f8cf"
+  integrity sha512-LfKjYoTaN8p2jYfeK/6dRDnjtWiaHQQZX6/VmFmn/ocvt6xtV8CdJ7AdenO+jqngaPS2i1Nh/A+mM6QdodH/NA==
+  dependencies:
+    inversify "^5.0.1"
+    reflect-metadata "^0.1.13"
+
 "@zerollup/ts-helpers@^1.7.0":
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@zerollup/ts-helpers/-/ts-helpers-1.7.0.tgz#491269c65fbe4207ad7d88b483488f652f83ade8"

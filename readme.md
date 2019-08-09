@@ -35,4 +35,4 @@ To start the demo, run `yarn demo`. The demo will run and will get restarted as 
 
 ## Contacts
 
-If you've got any questions or suggestions about this project, please forward them to eduard@stackeat.com. Will be happy to hear from you.
+Shall you have any questions or suggestions about this project, please forward them to eduard@stackeat.com. We'll be happy to hear from you.

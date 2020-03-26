@@ -1,11 +1,25 @@
-import { ExtensionModule } from '@stackeat/extensibility';
+import { DiagnosticsModuleExtensionApi } from '@stackeat/diagnostics';
+import { ExtensionModule  } from '@stackeat/extensibility';
+import { NotImplementedError } from '@stackeat/primitives';
 import capabilities from 'capabilities';
-import { BasicDiagnostics } from 'components/BasicDiagnostics';
 import { ContainerModule, interfaces } from 'inversify';
+import { ConsoleDiagnosticEventEmitter } from './ConsoleDiagnosticEventEmitter';
 
-class DiagnosticsBasicExtensionModule implements ExtensionModule {
+interface DiagnosticsBasicConfigurationApi {
+    useConsoleEmitter(): void;
+}
+
+class ConsoleDiagnosticsExtensionModule
+    implements ExtensionModule<DiagnosticsModuleExtensionApi, DiagnosticsBasicConfigurationApi> {
 
     private readonly containerModule = new ContainerModule(this.bindingsCallback.bind(this));
+    public compileConfigurationApi(extensionApi: DiagnosticsModuleExtensionApi): DiagnosticsBasicConfigurationApi {
+        return {
+            useConsoleEmitter: () => {
+                extensionApi.setEmitter(ConsoleDiagnosticEventEmitter);
+            },
+        };
+    }
     public getContainerModules(): interfaces.ContainerModule[] {
         return [
             new ContainerModule(this.bindingsCallback.bind(this)),
@@ -35,10 +49,10 @@ class DiagnosticsBasicExtensionModule implements ExtensionModule {
         unbind: interfaces.Unbind,
         isBound: interfaces.IsBound,
         rebind: interfaces.Rebind): void {
-        if (!isBound(capabilities.DIAGNOSTICS)) {
-            bind(capabilities.DIAGNOSTICS)
-                .to(BasicDiagnostics);
-        }
+        // if (!isBound(capabilities.DIAGNOSTICS)) {
+        //     bind(capabilities.DIAGNOSTICS)
+        //         .to(DefaultDiagnostics);
+        // }
 
         if (!isBound(capabilities.DIAGNOSTICS_ORIGIN)) {
             bind(capabilities.DIAGNOSTICS_ORIGIN)
@@ -53,5 +67,5 @@ class DiagnosticsBasicExtensionModule implements ExtensionModule {
 }
 
 export {
-    DiagnosticsBasicExtensionModule,
+    ConsoleDiagnosticsExtensionModule,
 };

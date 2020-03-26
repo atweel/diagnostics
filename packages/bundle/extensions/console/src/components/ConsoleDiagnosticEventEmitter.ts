@@ -2,8 +2,8 @@
 
 import {
     DiagnosticEventEmitter,
+    DiagnosticEventFormatter,
     EventCategory,
-    LogEventFormatter,
 } from '@stackeat/diagnostics';
 import capabilities from 'capabilities';
 import {
@@ -17,7 +17,7 @@ type CategorySpecificWriterMap = {
 };
 
 @injectable()
-class ConsoleEventLogEmitter implements DiagnosticEventEmitter {
+class ConsoleDiagnosticEventEmitter implements DiagnosticEventEmitter {
 
     private readonly categorySpecificWriters: CategorySpecificWriterMap = {
         DEBUG: console.debug,
@@ -27,7 +27,7 @@ class ConsoleEventLogEmitter implements DiagnosticEventEmitter {
     };
     constructor(
         @inject(capabilities.DIAGNOSTIC_EVENT_FORMATTER)
-        private readonly formatter: LogEventFormatter,
+        private readonly formatter: DiagnosticEventFormatter,
     ) {
 
     }
@@ -50,5 +50,5 @@ class ConsoleEventLogEmitter implements DiagnosticEventEmitter {
 }
 
 export {
-    ConsoleEventLogEmitter,
+    ConsoleDiagnosticEventEmitter,
 };

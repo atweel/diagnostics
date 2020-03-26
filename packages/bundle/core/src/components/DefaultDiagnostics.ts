@@ -1,15 +1,18 @@
+import capabilities from 'capabilities';
 import {
     DiagnosticEventEmitter,
+    EventCategory,
+} from 'conventions/DiagnosticEventEmitter';
+import {
     Diagnostics,
     ErrorFactory,
-    EventCategory,
-} from '@stackeat/diagnostics';
-import capabilities from 'capabilities';
+} from 'conventions/Diagnostics';
 import { inject, injectable } from 'inversify';
 import moment from 'moment';
+import 'reflect-metadata';
 
 @injectable()
-class BasicDiagnostics implements Diagnostics {
+class DefaultDiagnostics implements Diagnostics {
     constructor(
         @inject(capabilities.DIAGNOSTICS_ORIGIN)
         private readonly origin: string,
@@ -49,5 +52,5 @@ class BasicDiagnostics implements Diagnostics {
 }
 
 export {
-    BasicDiagnostics,
+    DefaultDiagnostics,
 };

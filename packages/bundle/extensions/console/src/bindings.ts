@@ -1,5 +1,4 @@
 import capabilities from 'capabilities';
-import { BasicDiagnostics } from 'components/BasicDiagnostics';
 import {
     ContainerModule,
     interfaces,
@@ -24,10 +23,10 @@ function bindingsCallback(
     unbind: interfaces.Unbind,
     isBound: interfaces.IsBound,
     rebind: interfaces.Rebind): void {
-    if (!isBound(capabilities.DIAGNOSTICS)) {
-        bind(capabilities.DIAGNOSTICS)
-            .to(BasicDiagnostics);
-    }
+    // if (!isBound(capabilities.DIAGNOSTICS)) {
+    //     bind(capabilities.DIAGNOSTICS)
+    //         .to(DefaultDiagnostics);
+    // }
 
     if (!isBound(capabilities.DIAGNOSTICS_ORIGIN)) {
         bind(capabilities.DIAGNOSTICS_ORIGIN)

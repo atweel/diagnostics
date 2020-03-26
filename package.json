@@ -2,9 +2,13 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "build": "ttsc --build solution.tsconfig.json",
+    "build": "ttsc --build --force solution.tsconfig.json",
     "watch": "ttsc --build --watch solution.tsconfig.json",
-    "demo": "node-dev --respawn packages/demo/app/entrypoint.js"
+    "clean": "lerna run clean",
+    "rebuild": "yarn clean && yarn build",
+    "demo": "node-dev --respawn packages/demo",
+    "debug:demo": "node-dev --respawn --inspect packages/demo",
+    "test": "lerna run test"
   },
   "devDependencies": {
     "lerna": "^3.14.1",

@@ -2,12 +2,12 @@ import { Moment } from 'moment';
 
 import { EventCategory } from 'conventions/DiagnosticEventEmitter';
 
-type LogEventFormatter = (timestamp: Moment,
-                          category: EventCategory,
-                          message: string,
-                          origin: string | undefined,
-                          tags: string[],
-                          payload?: any) => string;
+type DiagnosticEventFormatter = (timestamp: Moment,
+                                 category: EventCategory,
+                                 message: string,
+                                 origin: string | undefined,
+                                 tags: string[],
+                                 payload?: any) => string;
 
 type CategoryLiterals = {
     [category in EventCategory]: string;
@@ -90,15 +90,24 @@ function formatEventAsPrettyJson(timestamp: Moment,
     }, null, 2);
 }
 
-const BuiltInLogEventFormatters = {
-    SHORT_TEXT: formatEventAsShortText,
-    LONG_STRICT_TEXT: formatEventAsLongStrictText,
-    LONG_FLEXIBLE_TEXT: formatEventAsLongFlexibleText,
-    COMPACT_JSON: formatEventAsCompactJson,
-    PRETTY_JSON: formatEventAsPrettyJson,
+const BuiltInDiagnosticEventFormatters = {
+    SHORT_TEXT: 'SHORT_TEXT',
+    LONG_STRICT_TEXT: 'LONG_STRICT_TEXT',
+    LONG_FLEXIBLE_TEXT: 'LONG_FLEXIBLE_TEXT',
+    COMPACT_JSON: 'COMPACT_JSON',
+    PRETTY_JSON: 'PRETTY_JSON',
+};
+
+const BuiltInDiagnosticEventFormatterMapping = {
+    [BuiltInDiagnosticEventFormatters.SHORT_TEXT]: formatEventAsShortText,
+    [BuiltInDiagnosticEventFormatters.LONG_STRICT_TEXT]: formatEventAsLongStrictText,
+    [BuiltInDiagnosticEventFormatters.LONG_FLEXIBLE_TEXT]: formatEventAsLongFlexibleText,
+    [BuiltInDiagnosticEventFormatters.COMPACT_JSON]: formatEventAsCompactJson,
+    [BuiltInDiagnosticEventFormatters.PRETTY_JSON]: formatEventAsPrettyJson,
 };
 
 export {
-    LogEventFormatter,
-    BuiltInLogEventFormatters,
+    DiagnosticEventFormatter,
+    BuiltInDiagnosticEventFormatters,
+    BuiltInDiagnosticEventFormatterMapping,
 };

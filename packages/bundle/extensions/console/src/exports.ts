@@ -1,6 +1,5 @@
-import { DiagnosticsBasicExtensionModule } from 'components/DiagnosticsBasicExtensionModule';
+import { ConsoleDiagnosticsExtensionModule } from 'components/ConsoleDiagnosticsExtensionModule';
 
-export * from 'components/VoidEventLogEmitter';
-export * from 'components/ConsoleEventLogEmitter';
+export * from 'components/ConsoleDiagnosticEventEmitter';
 export { default as bindings } from 'bindings';
-export default new DiagnosticsBasicExtensionModule();
+export default new ConsoleDiagnosticsExtensionModule();

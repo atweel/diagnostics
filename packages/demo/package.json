@@ -5,7 +5,7 @@
   "author": "Eduard Malakhov <eduard@stackeat.com>",
   "homepage": "https://github.com/stackeat/diagnostics#readme",
   "license": "ISC",
-  "main": "lib/exports.js",
+  "main": "app/entrypoint.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -21,19 +21,24 @@
     "url": "git+https://github.com/stackeat/diagnostics.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "clean": "rm -rf app"
   },
   "bugs": {
     "url": "https://github.com/stackeat/diagnostics/issues"
   },
   "devDependencies": {
+    "@types/chai": "^4.2.0",
+    "@types/mocha": "^5.2.7",
     "@zerollup/ts-transform-paths": "^1.7.3",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
     "ttypescript": "^1.5.7",
+    "typemoq": "^2.1.0",
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@stackeat/diagnostics-console": "^0.1.0",
     "@stackeat/diagnostics": "^0.1.0",
+    "@stackeat/diagnostics-console": "^0.1.0",
     "inversify": "^5.0.1",
     "moment": "^2.24.0",
     "reflect-metadata": "^0.1.13"

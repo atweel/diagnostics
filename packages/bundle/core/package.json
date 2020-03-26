@@ -21,18 +21,24 @@
     "url": "git+https://github.com/stackeat/diagnostics.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "ts-mocha --paths src/**/*.spec.ts",
+    "clean": "rm -rf lib"
   },
   "bugs": {
     "url": "https://github.com/stackeat/diagnostics/issues"
   },
   "devDependencies": {
+    "@types/chai": "^4.2.0",
+    "@types/mocha": "^5.2.7",
     "@zerollup/ts-transform-paths": "^1.7.3",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
     "ttypescript": "^1.5.7",
+    "typemoq": "^2.1.0",
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@stackeat/extensibility": "^0.1.2",
+    "@stackeat/extensibility": "^0.1.19",
     "inversify": "^5.0.1",
     "moment": "^2.24.0",
     "reflect-metadata": "^0.1.13"

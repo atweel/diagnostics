@@ -5,7 +5,7 @@ import { injectable } from 'inversify';
 class VoidDiagnosticEventEmitter implements DiagnosticEventEmitter {
     // tslint:disable-next-line: no-empty
     public emitEvent(): void {
-
+        /** */
     }
 }
 

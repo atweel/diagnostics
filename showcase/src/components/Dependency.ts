@@ -16,7 +16,7 @@ class Dependency {
 
     }
 
-    public doWork() {
+    public doWork(): void {
         this.diagnostics.notify('Doing work...');
 
         this.diagnostics.debug('This is a sample debug message.');

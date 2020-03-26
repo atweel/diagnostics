@@ -17,7 +17,7 @@ class Application {
 
     }
 
-    public execute() {
+    public execute(): void {
         this.diagnostics.notify('Starting the application...');
 
         try {

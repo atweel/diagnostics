@@ -1,6 +1,5 @@
 import { DiagnosticsModuleExtensionApi } from '@atweel/diagnostics';
 import { ExtensionModule  } from '@stackeat/extensibility';
-import { NotImplementedError } from '@stackeat/primitives';
 import capabilities from 'capabilities';
 import { ContainerModule, interfaces } from 'inversify';
 import { ConsoleDiagnosticEventEmitter } from './ConsoleDiagnosticEventEmitter';
@@ -15,7 +14,7 @@ implements ExtensionModule<DiagnosticsModuleExtensionApi, DiagnosticsBasicConfig
     private readonly containerModule = new ContainerModule(this.bindingsCallback.bind(this));
     public compileConfigurationApi(extensionApi: DiagnosticsModuleExtensionApi): DiagnosticsBasicConfigurationApi {
         return {
-            useConsoleEmitter: () => {
+            useConsoleEmitter: (): void => {
                 extensionApi.setEmitter(ConsoleDiagnosticEventEmitter);
             },
         };
@@ -47,8 +46,7 @@ implements ExtensionModule<DiagnosticsModuleExtensionApi, DiagnosticsBasicConfig
     private bindingsCallback(
         bind: interfaces.Bind,
         unbind: interfaces.Unbind,
-        isBound: interfaces.IsBound,
-        rebind: interfaces.Rebind): void {
+        isBound: interfaces.IsBound,): void {
         // if (!isBound(capabilities.DIAGNOSTICS)) {
         //     bind(capabilities.DIAGNOSTICS)
         //         .to(DefaultDiagnostics);

@@ -21,8 +21,7 @@ function extractGrandGrandParentName(context: interfaces.Context): string {
 function bindingsCallback(
     bind: interfaces.Bind,
     unbind: interfaces.Unbind,
-    isBound: interfaces.IsBound,
-    rebind: interfaces.Rebind): void {
+    isBound: interfaces.IsBound): void {
     // if (!isBound(capabilities.DIAGNOSTICS)) {
     //     bind(capabilities.DIAGNOSTICS)
     //         .to(DefaultDiagnostics);

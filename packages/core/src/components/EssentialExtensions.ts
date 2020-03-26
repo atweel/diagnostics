@@ -1,9 +1,7 @@
 import { ExtensionModule } from '@stackeat/extensibility';
 import capabilities from 'capabilities';
-import { UNSAFE_DIAGNOSTICS_TAG } from 'common';
 import { interfaces } from 'inversify';
 import { DiagnosticsDummy } from './DiagnosticsDummy';
-import { SafeDiagnosticsProxy } from './SafeDiagnosticsProxy';
 
 class EssentialExtensions implements ExtensionModule<{}, {}> {
     constructor(
@@ -22,10 +20,10 @@ class EssentialExtensions implements ExtensionModule<{}, {}> {
         } else {
             if (this.injectSafeProxy) {
                 container.applyMiddleware((next: interfaces.Next) => {
-                    return (args: interfaces.NextArgs) => {
+                    return (args: interfaces.NextArgs): any => {
                         const nextContextInterceptor = args.contextInterceptor;
 
-                        args.contextInterceptor = (contexts: interfaces.Context) => {
+                        args.contextInterceptor = (contexts: interfaces.Context): interfaces.Context => {
                             if (!contexts.currentRequest) {
                                 // tslint:disable-next-line: no-console
                                 console.log('dfsdfsd');

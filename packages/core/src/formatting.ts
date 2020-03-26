@@ -23,9 +23,7 @@ const categoryLiterals: CategoryLiterals = {
 function formatEventAsShortText(timestamp: Moment,
                                 category: EventCategory,
                                 message: string,
-                                origin: string | undefined,
-                                tags: string[],
-                                payload?: any): string {
+                                origin: string | undefined): string {
     return `${ timestamp.format('HH:mm:ss.SSS') } ${ categoryLiterals[category] } ${ origin }: ${ message }`;
 }
 
@@ -33,8 +31,7 @@ function formatEventAsLongStrictText(timestamp: Moment,
                                      category: EventCategory,
                                      message: string,
                                      origin: string | undefined,
-                                     tags: string[],
-                                     payload?: any): string {
+                                     tags: string[]): string {
     return [
         timestamp.format('HH:mm:ss.SSS'),
         categoryLiterals[category],
@@ -48,8 +45,7 @@ function formatEventAsLongFlexibleText(timestamp: Moment                        
                                        category: EventCategory                             ,
                                        message: string                             ,
                                        origin: string | undefined                             ,
-                                       tags: string[]                             ,
-                                       payload?: any): string {
+                                       tags: string[]): string {
     return [
         timestamp.format('HH:mm:ss.SSS'),
         categoryLiterals[category],

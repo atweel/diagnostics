@@ -53,17 +53,17 @@ class DiagnosticsModule extends CoreModule<DiagnosticsModuleExtensionApi, Diagno
     }
     protected compileExtensionApi(): DiagnosticsModuleExtensionApi {
         return {
-            setGlobalDiagnostics: (diagnostics: any) => {
+            setGlobalDiagnostics: (diagnostics: any): void => {
                 this.diagnostics = diagnostics;
             },
-            setEmitter: (emitter: any) => {
+            setEmitter: (emitter: any): void => {
                 this.emitter = emitter;
             },
         };
     }
     protected compileConfigurationApi(): DiagnosticsModuleConfigurationApi {
         return {
-            useDefaultDiagnostics: () => {
+            useDefaultDiagnostics: (): void => {
                 this.diagnostics = DefaultDiagnostics;
             },
             useBuiltInFormatter: (formatterName: string): void => {

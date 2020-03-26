@@ -5,7 +5,7 @@ import { Diagnostics } from '../conventions/Diagnostics';
 import { SafeDiagnosticsProxy } from './SafeDiagnosticsProxy';
 
 describe('SafeDiagnosticsProxy', () => {
-    it (`Supresses the error thrown from the underlying diagnostics' 'notify' method.`, () => {
+    it (`Supresses the error thrown from the underlying diagnostics 'notify' method.`, () => {
         const underlyingDiagnosticsMock = Mock.ofType<Diagnostics>();
 
         underlyingDiagnosticsMock
@@ -17,7 +17,7 @@ describe('SafeDiagnosticsProxy', () => {
         diagnosticsProxy.notify('dummy message');
     });
 
-    it (`Supresses the error thrown from the underlying diagnostics' 'warn' method.`, () => {
+    it (`Supresses the error thrown from the underlying diagnostics 'warn' method.`, () => {
         const underlyingDiagnosticsMock = Mock.ofType<Diagnostics>();
 
         underlyingDiagnosticsMock
@@ -29,7 +29,7 @@ describe('SafeDiagnosticsProxy', () => {
         diagnosticsProxy.warn('dummy message');
     });
 
-    it (`Supresses the error thrown from the underlying diagnostics' 'debug' method.`, () => {
+    it (`Supresses the error thrown from the underlying diagnostics 'debug' method.`, () => {
         const underlyingDiagnosticsMock = Mock.ofType<Diagnostics>();
 
         underlyingDiagnosticsMock
@@ -41,7 +41,7 @@ describe('SafeDiagnosticsProxy', () => {
         diagnosticsProxy.debug('dummy message');
     });
 
-    it (`Does not suppress the error thrown from the underlying diagnostics' 'abort' method.`, () => {
+    it (`Does not suppress the error thrown from the underlying diagnostics 'abort' method.`, () => {
         const underlyingDiagnosticsMock = Mock.ofType<Diagnostics>();
 
         underlyingDiagnosticsMock

@@ -10,7 +10,7 @@ interface DiagnosticsBasicConfigurationApi {
 }
 
 class ConsoleDiagnosticsExtensionModule
-    implements ExtensionModule<DiagnosticsModuleExtensionApi, DiagnosticsBasicConfigurationApi> {
+implements ExtensionModule<DiagnosticsModuleExtensionApi, DiagnosticsBasicConfigurationApi> {
 
     private readonly containerModule = new ContainerModule(this.bindingsCallback.bind(this));
     public compileConfigurationApi(extensionApi: DiagnosticsModuleExtensionApi): DiagnosticsBasicConfigurationApi {

@@ -26,7 +26,7 @@ function formatEventAsShortText(timestamp: Moment,
                                 origin: string | undefined,
                                 tags: string[],
                                 payload?: any): string {
-    return `${timestamp.format('HH:mm:ss.SSS')} ${categoryLiterals[category]} ${origin}: ${message}`;
+    return `${ timestamp.format('HH:mm:ss.SSS') } ${ categoryLiterals[category] } ${ origin }: ${ message }`;
 }
 
 function formatEventAsLongStrictText(timestamp: Moment,

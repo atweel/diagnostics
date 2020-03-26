@@ -8,12 +8,18 @@
     "rebuild": "yarn clean && yarn build",
     "demo": "node-dev --respawn packages/demo",
     "debug:demo": "node-dev --respawn --inspect packages/demo",
+    "lint": "eslint --ext .ts .",
+    "lint:fix": "yarn lint --fix",
     "test": "lerna run test"
   },
   "workspaces": [
     "packages/**/*"
   ],
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
     "lerna": "^3.14.1",
     "ttypescript": "^1.5.7",
     "typescript": "^3.5.3"

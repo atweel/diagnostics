@@ -68,8 +68,5 @@
           "transform": "@zerollup/ts-transform-paths"
       }
     ]
-  },
-  "exclude": [
-    "**/*.spec.ts"
-  ]
+  }
 }

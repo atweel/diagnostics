@@ -10,6 +10,9 @@
     "debug:demo": "node-dev --respawn --inspect packages/demo",
     "test": "lerna run test"
   },
+  "workspaces": [
+    "packages/**/*"
+  ],
   "devDependencies": {
     "lerna": "^3.14.1",
     "ttypescript": "^1.5.7",

@@ -5,6 +5,6 @@
         { "path": "packages/demo" }
     ],
     "exclude": [
-        "**/*"
+        "*"
     ]
 }

@@ -7,9 +7,13 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Debug Demo",
-            "program": "${workspaceFolder}/packages/demo/app/entrypoint.js"
+            "name": "Debug showcase application",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/showcase/app/entrypoint.js",
+            "preLaunchTask": "build",
+            "outFiles": [
+                "${workspaceFolder}/showcase/app/**/*"
+            ]
         }
-
     ]
 }

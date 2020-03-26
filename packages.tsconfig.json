@@ -1,8 +1,7 @@
 {
     "references": [
         { "path": "packages/core" },
-        { "path": "packages/extensions/console" },
-        { "path": "showcase" }
+        { "path": "packages/extensions/console" }
     ],
     "exclude": [
         "*"

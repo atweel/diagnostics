@@ -2,12 +2,12 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "build": "ttsc --build --force solution.tsconfig.json",
-    "watch": "ttsc --build --watch solution.tsconfig.json",
+    "build": "ttsc --build --force packages.tsconfig.json",
+    "watch": "ttsc --build --watch packages.tsconfig.json",
     "clean": "lerna run clean",
     "rebuild": "yarn clean && yarn build",
-    "demo": "node-dev --respawn packages/demo",
-    "debug:demo": "node-dev --respawn --inspect packages/demo",
+    "showcase": "ts-node showcase",
+    "debug:showcase": "ts-node-dev --respawn --inspect -- showcase",
     "lint": "eslint --ext .ts .",
     "lint:fix": "yarn lint --fix",
     "test": "lerna run test",
@@ -23,7 +23,9 @@
     "eslint-plugin-react": "^7.19.0",
     "husky": "^4.2.3",
     "lerna": "^3.14.1",
+    "node-dev": "^4.0.0",
     "ts-node": "^8.8.1",
+    "ts-node-dev": "^1.0.0-pre.44",
     "ttypescript": "^1.5.7",
     "typescript": "^3.5.3"
   }

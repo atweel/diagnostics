@@ -7,7 +7,7 @@
 # https://github.com/microsoft/vscode-dev-containers/tree/v0.106.0/containers/typescript-node-12/.devcontainer/Dockerfile
 FROM atweel/vscode-devcontainer-typescript-node:12
 
-RUN yarn global add lerna ts-node ts-mocha mocha
+RUN yarn global add typescript lerna ts-node ts-node-dev ts-mocha mocha
 
 # ** [Optional] Uncomment this section to install additional packages. **
 #

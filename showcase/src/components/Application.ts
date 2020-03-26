@@ -1,16 +1,18 @@
+import { inject, injectable, named } from 'inversify';
+import 'reflect-metadata';
+
 import {
     Diagnostics,
 } from '@atweel/diagnostics';
+
 import capabilities from 'capabilities';
 import { Dependency } from 'components/Dependency';
-import { inject, injectable, named } from 'inversify';
-import 'reflect-metadata';
 
 @injectable()
 class Application {
     constructor(
         @inject(Dependency) @named('Dependency')
-        private readonly component: Dependency,
+        private readonly dependency: Dependency,
         @inject(capabilities.DIAGNOSTICS)
         private readonly diagnostics: Diagnostics,
     ) {
@@ -21,7 +23,7 @@ class Application {
         this.diagnostics.notify('Starting the application...');
 
         try {
-            this.component.doWork();
+            this.dependency.doWork();
         } catch (error) {
             this.diagnostics.warn('The error was handled by catch clause.');
         }

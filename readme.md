@@ -1,6 +1,7 @@
+![Integrate master branch](https://github.com/atweel/diagnostics/workflows/Integrate%20master%20branch/badge.svg?branch=master)
+
 # Diagnostics package bundle for Node.js applications
 A project by Atweel Inc.
-
 
 ## Overview
 

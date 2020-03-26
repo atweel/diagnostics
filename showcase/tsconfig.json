@@ -70,7 +70,7 @@
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
   },
   "references": [
-    { "path": "../packages/bundle/core" },
-    { "path": "../packages/bundle/extensions/console" }
+    { "path": "../packages/core" },
+    { "path": "../packages/extensions/console" }
   ]
 }

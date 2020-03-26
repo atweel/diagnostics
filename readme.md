@@ -35,7 +35,7 @@ Please note, that we are using the compiler from the `ttypescript` package inste
 
 To start the showcase, run `yarn showcase`. The showcase will run and will get restarted as the packages are rebuilt.
 
-### License
+## License
 
 Copyright 2020 Atweel Inc.
 Copyright 2020 Eduard Malakhov

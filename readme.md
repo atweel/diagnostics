@@ -9,7 +9,7 @@ This package bundle introduces a common abstraction layer that software develper
 This repository is organized as a [lerna](https://github.com/lerna/lerna) monorepo and includes three packages:
 - @atweel/diagnostics (packages/bundle/core) contains definition of the `Diagnostics` interface and related concepts,
 - @atweel/diagnostics-console (packages/bundle/extensions/console) provides a console-based implementation of the `Diagnostics` interface,
-- @atweel/diagnostics-demo (packages/demo) demonstrates an example of using console-based diagnostics in a sample application.
+- @atweel/diagnostics-showcase (packages/demo) demonstrates an example of using console-based diagnostics in a sample application.
 
 The project uses `@stackeat/extensibility` package to separate shared abstractions from implmentation and allow for more granular dependency management for consumers. The core module is provided in `@atweel/diagnostics` package and extension modules are located under packages/bundle/extensions.
 

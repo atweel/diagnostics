@@ -1,5 +1,5 @@
 {
-  "extends": "../../default.tsconfig.json",
+  "extends": "../default.tsconfig.json",
   "compilerOptions": {
     /* Basic Options */
     // "incremental": true,                   /* Enable incremental compilation */
@@ -70,7 +70,7 @@
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
   },
   "references": [
-    { "path": "../bundle/core" },
-    { "path": "../bundle/extensions/console" }
+    { "path": "../packages/bundle/core" },
+    { "path": "../packages/bundle/extensions/console" }
   ]
 }

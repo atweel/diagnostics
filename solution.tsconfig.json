@@ -2,7 +2,7 @@
     "references": [
         { "path": "packages/bundle/core" },
         { "path": "packages/bundle/extensions/console" },
-        { "path": "packages/demo" }
+        { "path": "demonstration" }
     ],
     "exclude": [
         "*"

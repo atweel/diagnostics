@@ -5,6 +5,7 @@
   "author": "Eduard Malakhov <eduard@atweel.com>",
   "homepage": "https://github.com/atweel/diagnostics#readme",
   "license": "ISC",
+  "private": true,
   "main": "app/entrypoint.js",
   "directories": {
     "lib": "lib",

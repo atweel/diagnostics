@@ -28,4 +28,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPMJS_ORG_READER_TOKEN }}
     - run: yarn integrate

@@ -1,4 +1,4 @@
-import { Diagnostics } from '@stackeat/diagnostics';
+import { Diagnostics } from '@atweel/diagnostics';
 import capabilities from 'capabilities';
 import { ApplicationError } from 'components/ApplicationError';
 import {

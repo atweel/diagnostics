@@ -1,9 +1,9 @@
 {
-  "name": "@stackeat/diagnostics-console",
+  "name": "@atweel/diagnostics-console",
   "version": "0.1.0",
   "description": "> TODO: description",
-  "author": "Eduard Malakhov <eduard@stackeat.com>",
-  "homepage": "https://github.com/stackeat/diagnostics#readme",
+  "author": "Eduard Malakhov <eduard@atweel.com>",
+  "homepage": "https://github.com/atweel/diagnostics#readme",
   "license": "ISC",
   "main": "lib/exports.js",
   "directories": {
@@ -18,13 +18,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stackeat/diagnostics.git"
+    "url": "git+https://github.com/atweel/diagnostics.git"
   },
   "scripts": {
     "clean": "rm -rf lib"
   },
   "bugs": {
-    "url": "https://github.com/stackeat/diagnostics/issues"
+    "url": "https://github.com/atweel/diagnostics/issues"
   },
   "devDependencies": {
     "@types/chai": "^4.2.0",
@@ -37,7 +37,7 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@stackeat/diagnostics": "^0.1.0",
+    "@atweel/diagnostics": "^0.1.0",
     "@stackeat/extensibility": "^0.1.19",
     "@stackeat/primitives": "^0.1.0",
     "inversify": "^5.0.1",

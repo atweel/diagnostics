@@ -1,6 +1,6 @@
 import {
     Diagnostics,
-} from '@stackeat/diagnostics';
+} from '@atweel/diagnostics';
 import capabilities from 'capabilities';
 import { Application } from 'components/Application';
 import container from 'container';

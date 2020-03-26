@@ -1,7 +1,7 @@
 import diagnostics, {
     BuiltInDiagnosticEventFormatters,
-} from '@stackeat/diagnostics';
-import consoleDiagnostics from '@stackeat/diagnostics-console';
+} from '@atweel/diagnostics';
+import consoleDiagnostics from '@atweel/diagnostics-console';
 import { Application } from 'components/Application';
 import { Dependency } from 'components/Dependency';
 import { Container } from 'inversify';

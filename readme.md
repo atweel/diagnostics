@@ -1,4 +1,4 @@
-# Diagnostics package bundle by Stackeat Company
+# Diagnostics package bundle by Atweel Inc.
 
 ## Overview
 
@@ -7,15 +7,15 @@ This package bundle introduces a common abstraction layer that software develper
 ## Solution structure
 
 This repository is organized as a [lerna](https://github.com/lerna/lerna) monorepo and includes three packages:
-- @stackeat/diagnostics (packages/bundle/core) contains definition of the `Diagnostics` interface and related concepts,
-- @stackeat/diagnostics-console (packages/bundle/extensions/console) provides a console-based implementation of the `Diagnostics` interface,
-- @stackeat/diagnostics-demo (packages/demo) demonstrates an example of using console-based diagnostics in a sample application.
+- @atweel/diagnostics (packages/bundle/core) contains definition of the `Diagnostics` interface and related concepts,
+- @atweel/diagnostics-console (packages/bundle/extensions/console) provides a console-based implementation of the `Diagnostics` interface,
+- @atweel/diagnostics-demo (packages/demo) demonstrates an example of using console-based diagnostics in a sample application.
 
-The project uses `@stackeat/extensibility` package to separate shared abstractions from implmentation and allow for more granular dependency management for consumers. The core module is provided in `@stackeat/diagnostics` package and extension modules are located under packages/bundle/extensions.
+The project uses `@stackeat/extensibility` package to separate shared abstractions from implmentation and allow for more granular dependency management for consumers. The core module is provided in `@atweel/diagnostics` package and extension modules are located under packages/bundle/extensions.
 
 For more information about individual packages within this solution, please refer to package-specific documentation:
-- [@stackeat/diagnostics](packages/bundle/core/readme.md)
-- [@stackeat/diagnostics-console](packages/bundle/extensions/console/readme.md)
+- [@atweel/diagnostics](packages/bundle/core/readme.md)
+- [@atweel/diagnostics-console](packages/bundle/extensions/console/readme.md)
 
 ## Contribution guidelines
 
@@ -35,4 +35,4 @@ To start the demo, run `yarn demo`. The demo will run and will get restarted as 
 
 ## Contacts
 
-Shall you have any questions or suggestions about this project, please forward them to eduard@stackeat.com. We'll be happy to hear from you.
+Shall you have any questions or suggestions about this project, please forward them to eduard@atweel.com. We'll be happy to hear from you.

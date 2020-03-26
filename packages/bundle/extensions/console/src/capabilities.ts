@@ -1,4 +1,4 @@
-import { Capabilities as FrameworkCapabilities } from '@stackeat/diagnostics';
+import { Capabilities as FrameworkCapabilities } from '@atweel/diagnostics';
 
 const capabilities = {
     ...FrameworkCapabilities,

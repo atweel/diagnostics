@@ -4,7 +4,7 @@ import {
     DiagnosticEventEmitter,
     DiagnosticEventFormatter,
     EventCategory,
-} from '@stackeat/diagnostics';
+} from '@atweel/diagnostics';
 import capabilities from 'capabilities';
 import {
     inject,

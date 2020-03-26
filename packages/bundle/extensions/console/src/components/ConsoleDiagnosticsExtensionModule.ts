@@ -1,4 +1,4 @@
-import { DiagnosticsModuleExtensionApi } from '@stackeat/diagnostics';
+import { DiagnosticsModuleExtensionApi } from '@atweel/diagnostics';
 import { ExtensionModule  } from '@stackeat/extensibility';
 import { NotImplementedError } from '@stackeat/primitives';
 import capabilities from 'capabilities';

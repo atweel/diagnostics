@@ -1,6 +1,6 @@
 import {
     Diagnostics,
-} from '@stackeat/diagnostics';
+} from '@atweel/diagnostics';
 import capabilities from 'capabilities';
 import { Dependency } from 'components/Dependency';
 import { inject, injectable, named } from 'inversify';

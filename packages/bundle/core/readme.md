@@ -1,8 +1,8 @@
-# Diagnostics Core package by Stackeat Company
+# Diagnostics Core package by Atweel Inc.
 
 ## Overview
 
-This package is part of the Diagnostics Bundle developed and maintained by Stackeat Company. The package defines common abstractions for integrating diagnostic utilities into application software. By implementing these abstractions, diagnostic utility vendors and third parties allow for seamless integration of these tools into any software that uses interfaces defined in this package.
+This package is part of the Diagnostics Bundle developed and maintained by Atweel Inc.. The package defines common abstractions for integrating diagnostic utilities into application software. By implementing these abstractions, diagnostic utility vendors and third parties allow for seamless integration of these tools into any software that uses interfaces defined in this package.
 
 ## Key concepts
 
@@ -56,14 +56,14 @@ Being a fundamental component that is heavily used across the codebase, deiagnos
 
 If you want to use diagnostics in your application, here are the steps to follow.
 
-1. Add `@stackeat/diagnostics` as a dependency to your package(s). Please note, that this will only install client interfaces but not implementations.
-2. Pick extension package(s) that serve(s) your needs like `@stackeat/diagnostics-console` which provides console-based diagnostic and add it as dependency. We will use `@stackeat/diagnostics-console` in this tutorial.
-3. The recommended way to instantiate diagnostic components is through InversifyJS containers. If you do not want toypue  use InversifyJS, you can import and manually create instances of components of your choice from extension packages. To start with diagnostics and InversifyJS, you'll need to import the core module from `@stackeat/diagnostics` and any extension moduled from extension packages that you've installed. Then, you need to load these extensions into the core and inject it into the container as demonstrated below.
+1. Add `@atweel/diagnostics` as a dependency to your package(s). Please note, that this will only install client interfaces but not implementations.
+2. Pick extension package(s) that serve(s) your needs like `@atweel/diagnostics-console` which provides console-based diagnostic and add it as dependency. We will use `@atweel/diagnostics-console` in this tutorial.
+3. The recommended way to instantiate diagnostic components is through InversifyJS containers. If you do not want toypue  use InversifyJS, you can import and manually create instances of components of your choice from extension packages. To start with diagnostics and InversifyJS, you'll need to import the core module from `@atweel/diagnostics` and any extension moduled from extension packages that you've installed. Then, you need to load these extensions into the core and inject it into the container as demonstrated below.
    ```typescript
     import diagnostics, {
         BuiltInDiagnosticEventFormatters,
-    } from '@stackeat/diagnostics';
-    import consoleDiagnostics from '@stackeat/diagnostics-console';
+    } from '@atweel/diagnostics';
+    import consoleDiagnostics from '@atweel/diagnostics-console';
     import { Container } from 'inversify';
 
     diagnostics.use(consoleDiagnostics);
@@ -98,4 +98,4 @@ If you want to use diagnostics in your application, here are the steps to follow
 [TBD]
 
 ## Contacts
-Shall you have any questions or suggestions about this package, please forward them to eduard@stackeat.com. We'll be happy to hear from you.
+Shall you have any questions or suggestions about this package, please forward them to eduard@atweel.com. We'll be happy to hear from you.

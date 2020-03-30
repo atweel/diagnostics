@@ -18,9 +18,8 @@ jobs:
       NPM_AUTH_TOKEN: ${{ secrets.NPMJS_ORG_READER_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.ROBBY_ATWEELS_GITHUB_TOKEN }}
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -32,14 +31,15 @@ jobs:
           git config --global user.email "robby@atweel.com" && \
           git config --global user.name "Robby Atweel"
 
-      - name: Configure NPM
+      - name: Configure npm
         run: echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > .npmrc
 
       - name: Resolve yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      - uses: actions/cache@v1
+      - name: Configure yarn cache
+        uses: actions/cache@v1
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}

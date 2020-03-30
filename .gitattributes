@@ -1,1 +1,2 @@
 package.json merge=ours
+lerna.json merge=ours

@@ -4,7 +4,7 @@
   "description": "Diagnostics package by Atweel Inc.",
   "author": "Eduard Malakhov <eduard@atweel.com>",
   "homepage": "https://github.com/atweel/diagnostics#readme",
-  "license": "ISC",
+  "license": "MIT",
   "main": "lib/exports.js",
   "directories": {
     "lib": "lib",

@@ -56,7 +56,7 @@ jobs:
         run: |
           git fetch --tags --quiet
           if [[ $(git tag --points-at HEAD) !=  "v"* ]]; 
-            then yarn lerna version --prerelease --preid alpha --no-commit-hooks --no-push
+            then yarn lerna version prerelease --preid alpha --no-commit-hooks --no-push
           fi
 
       - name: Integrate packages

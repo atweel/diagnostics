@@ -12,8 +12,7 @@
     "lint:fix": "yarn lint --fix",
     "test": "lerna exec jest -- \\$PWD --config \\$LERNA_ROOT_PATH/jest.config.js --passWithNoTests",
     "integrate": "yarn clean && yarn lint && yarn build && yarn test",
-    "prepublish": "false",
-    "prepack": "false"
+    "prepack": "yarn lint && yarn rebuild && yarn test"
   },
   "workspaces": [
     "packages/**/*"
@@ -30,5 +29,6 @@
     "ts-node-dev": "^1.0.0-pre.44",
     "ttypescript": "^1.5.7",
     "typescript": "^3.5.3"
-  }
+  },
+  "version": "1.0.0-beta.2"
 }

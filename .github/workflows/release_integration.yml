@@ -28,13 +28,8 @@ jobs:
           git config --global user.email "robby@atweel.com" && \
           git config --global user.name "Robby Atweel"
 
-      - name: Increment prerelease version if no version tag assigned
-        if: github.event_name == 'push'
-        run: |
-          git fetch --tags --quiet
-          if [[ $(git tag --points-at HEAD) !=  "v"* ]]; 
-            then yarn version --prerelease --preid beta --no-commit-hooks 
-          fi
+      - name: Configure NPM access token
+        run: echo "//registry.npmjs.org/:_authToken=\${NPM_PUBLISHER_AUTH_TOKEN}" > .npmrc
 
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -52,23 +47,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Integrate package
+      - name: Bootstrap packages
         run: |
-          echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > .npmrc && \
-          yarn install --frozen-lockfile && \
-          yarn integrate
-
-      - name: Push version update and tag
-        if: github.event_name == 'push'
-        run: git push --tags && git push
-
-      - name: Create package
-        run: yarn pack
-
-      - name: Configure access token
-        run: echo "//registry.npmjs.org/:_authToken=\${NPM_PUBLISHER_AUTH_TOKEN}" > .npmrc
+          lerna bootstrap -- --frozen-lockfile
 
       - name: Publish packages
-        run: lerna publish --prepatch --preid beta --dist-tag beta
-
-
+        run: yarn lerna publish --prerelease --preid beta --dist-tag beta

@@ -1,6 +1,5 @@
 {
     hooks: {
-        "pre-commit": "yarn integrate",
-        "pre-push": "git pull --rebase || true"
+        "pre-commit": "yarn integrate"
     }
 }

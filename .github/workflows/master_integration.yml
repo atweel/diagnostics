@@ -32,7 +32,7 @@ jobs:
         run: |
           git fetch --tags --quiet
           if [[ $(git tag --points-at HEAD) !=  "v"* ]]; 
-            then yarn version --prerelease --preid alpha --no-commit-hooks 
+            then lerna version --prerelease --preid alpha --no-commit-hooks 
           fi
 
       - name: Use Node.js

@@ -1,0 +1,74 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Integrate release branch
+
+on:
+  push:
+    branches: [ "releases/*" ]
+
+jobs:
+  integrate:
+    name: Integrate
+    
+    runs-on: ubuntu-latest
+
+    env:
+      CI: true
+      NPM_AUTH_TOKEN: ${{ secrets.NPMJS_ORG_READER_TOKEN }}
+      NPM_PUBLISHER_AUTH_TOKEN: ${{ secrets.NPMJS_ORG_PUBLISHER_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ROBBY_ATWEELS_GITHUB_TOKEN }}
+
+      - name: Configure git user name & email
+        run: |
+          git config --global user.email "robby@atweel.com" && \
+          git config --global user.name "Robby Atweel"
+
+      - name: Increment prerelease version if no version tag assigned
+        if: github.event_name == 'push'
+        run: |
+          git fetch --tags --quiet
+          if [[ $(git tag --points-at HEAD) !=  "v"* ]]; 
+            then yarn version --prerelease --preid beta --no-commit-hooks 
+          fi
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Resolve yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v1
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Integrate package
+        run: |
+          echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > .npmrc && \
+          yarn install --frozen-lockfile && \
+          yarn integrate
+
+      - name: Push version update and tag
+        if: github.event_name == 'push'
+        run: git push --tags && git push
+
+      - name: Create package
+        run: yarn pack
+
+      - name: Configure access token
+        run: echo "//registry.npmjs.org/:_authToken=\${NPM_PUBLISHER_AUTH_TOKEN}" > .npmrc
+
+      - name: Publish package
+        run: npm publish $(find . -name \*.tgz)
+
+

@@ -27,10 +27,13 @@ jobs:
         with:
           node-version: 12.x
 
-      - name: Configure git user name & email
+      - name: Configure git
         run: |
           git config --global user.email "robby@atweel.com" && \
           git config --global user.name "Robby Atweel"
+
+      - name: Configure NPM
+        run: echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > .npmrc && \
 
       - name: Resolve yarn cache directory path
         id: yarn-cache-dir-path
@@ -46,21 +49,18 @@ jobs:
       - name: Install dependencies & bootstrap packages
         run: |
           yarn install -W --frozen-lockfile && \
-          yarn lerna bootstrap -- --frozen-lockfile
+          yarn lerna bootstrap -- -- --frozen-lockfile
 
       - name: Increment prerelease version if no version tag assigned
         if: github.event_name == 'push'
         run: |
           git fetch --tags --quiet
           if [[ $(git tag --points-at HEAD) !=  "v"* ]]; 
-            then yarn lerna version --prerelease --preid alpha --no-commit-hooks 
+            then yarn lerna version --prerelease --preid alpha --no-commit-hooks --no-push
           fi
 
-      - name: Integrate package
-        run: |
-          echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > .npmrc && \
-          yarn install --frozen-lockfile && \
-          yarn integrate
+      - name: Integrate packages
+        run: yarn integrate
 
       - name: Push version update and tag
         if: github.event_name == 'push'

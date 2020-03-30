@@ -1,7 +1,7 @@
 {
   "name": "@atweel/diagnostics",
   "version": "1.0.0-alpha.2",
-  "description": "> TODO: description",
+  "description": "Diagnostics package by Atweel Inc.",
   "author": "Eduard Malakhov <eduard@atweel.com>",
   "homepage": "https://github.com/atweel/diagnostics#readme",
   "license": "ISC",

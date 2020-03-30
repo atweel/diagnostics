@@ -41,7 +41,6 @@
   "dependencies": {
     "@atweel/diagnostics": "^0.1.0",
     "@stackeat/extensibility": "^0.1.19",
-    "@stackeat/primitives": "^0.1.0",
     "inversify": "^5.0.1",
     "moment": "^2.24.0",
     "reflect-metadata": "^0.1.13"

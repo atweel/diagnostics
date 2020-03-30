@@ -21,8 +21,7 @@
     "url": "git+https://github.com/atweel/diagnostics.git"
   },
   "scripts": {
-    "clean": "rm -rf lib",
-    "prepublish": "false"
+    "clean": "rm -rf lib"
   },
   "bugs": {
     "url": "https://github.com/atweel/diagnostics/issues"

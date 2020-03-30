@@ -33,7 +33,7 @@ jobs:
           git config --global user.name "Robby Atweel"
 
       - name: Configure NPM
-        run: echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > .npmrc && \
+        run: echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > .npmrc
 
       - name: Resolve yarn cache directory path
         id: yarn-cache-dir-path

@@ -12,7 +12,8 @@
     "lint:fix": "yarn lint --fix",
     "test": "lerna exec jest -- \\$PWD --config \\$LERNA_ROOT_PATH/jest.config.js --passWithNoTests",
     "integrate": "yarn clean && yarn lint && yarn build && yarn test",
-    "prepublish": "false"
+    "prepublish": "false",
+    "prepack": "false"
   },
   "workspaces": [
     "packages/**/*"

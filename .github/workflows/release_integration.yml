@@ -52,4 +52,4 @@ jobs:
           yarn lerna bootstrap -- -- --frozen-lockfile
 
       - name: Publish packages
-        run: yarn lerna publish --prerelease --preid beta --dist-tag beta
+        run: yarn lerna publish prerelease --preid beta --dist-tag beta

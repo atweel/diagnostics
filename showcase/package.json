@@ -4,7 +4,7 @@
   "description": "> TODO: description",
   "author": "Eduard Malakhov <eduard@atweel.com>",
   "homepage": "https://github.com/atweel/diagnostics#readme",
-  "license": "ISC",
+  "license": "MIT",
   "private": true,
   "main": "app/entrypoint.js",
   "directories": {

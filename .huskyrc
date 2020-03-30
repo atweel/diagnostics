@@ -1,5 +1,6 @@
 {
     hooks: {
-        "pre-commit": "yarn integrate"
+        "pre-commit": "yarn integrate",
+        "pre-merge": "git config merge.ours.driver true"
     }
 }

@@ -1,5 +1,4 @@
-import { expect } from 'chai';
-import 'mocha';
+import 'jest';
 import { It, Mock } from 'typemoq';
 import { Diagnostics } from '../conventions/Diagnostics';
 import { SafeDiagnosticsProxy } from './SafeDiagnosticsProxy';
@@ -51,6 +50,6 @@ describe('SafeDiagnosticsProxy', () => {
         const diagnosticsProxy = new SafeDiagnosticsProxy(underlyingDiagnosticsMock.object);
 
         expect(() => diagnosticsProxy.abort(new Error()))
-            .to.throw(Error);
+            .toThrow(Error);
     });
 });

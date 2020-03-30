@@ -1,6 +1,13 @@
 module.exports = {
   root: true,
-  ignorePatterns: ["node_modules/", "lib/", "app/"],
+  ignorePatterns: [
+    "node_modules/", 
+    "library/", 
+    "lib/",
+    "app/", 
+    "tests/hooks", 
+    "*.config.js"
+  ],
   parser: '@typescript-eslint/parser',
   plugins: [
     '@typescript-eslint',

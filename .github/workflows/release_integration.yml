@@ -68,7 +68,7 @@ jobs:
       - name: Configure access token
         run: echo "//registry.npmjs.org/:_authToken=\${NPM_PUBLISHER_AUTH_TOKEN}" > .npmrc
 
-      - name: Publish package
-        run: npm publish $(find . -name \*.tgz)
+      - name: Publish packages
+        run: lerna publish --prepatch --preid beta --dist-tag beta
 
 

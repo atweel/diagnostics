@@ -10,8 +10,9 @@
     "debug:showcase": "ts-node-dev --respawn --inspect -- showcase",
     "lint": "eslint --ext .ts .",
     "lint:fix": "yarn lint --fix",
-    "test": "lerna run test",
-    "integrate": "yarn clean && yarn lint && yarn build && yarn test"
+    "test": "lerna exec jest -- \\$PWD --config \\$LERNA_ROOT_PATH/jest.config.js --passWithNoTests",
+    "integrate": "yarn clean && yarn lint && yarn build && yarn test",
+    "prepublish": "false"
   },
   "workspaces": [
     "packages/**/*"

@@ -29,6 +29,5 @@
     "ts-node-dev": "^1.0.0-pre.44",
     "ttypescript": "^1.5.7",
     "typescript": "^3.5.3"
-  },
-  "version": "1.0.0-beta.3"
+  }
 }

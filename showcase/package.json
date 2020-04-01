@@ -1,6 +1,6 @@
 {
   "name": "@atweel/diagnostics-showcase",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-alpha.6",
   "description": "> TODO: description",
   "author": "Eduard Malakhov <eduard@atweel.com>",
   "homepage": "https://github.com/atweel/diagnostics#readme",
@@ -29,10 +29,10 @@
   },
   "devDependencies": {
     "@types/chai": "^4.2.0",
-    "@types/mocha": "^5.2.7",
     "@zerollup/ts-transform-paths": "^1.7.3",
     "chai": "^4.2.0",
-    "mocha": "^6.2.0",
+    "ts-node": "^8.8.1",
+    "tsconfig-paths": "^3.9.0",
     "ttypescript": "^1.5.7",
     "typemoq": "^2.1.0",
     "typescript": "^3.5.3"

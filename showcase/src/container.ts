@@ -2,8 +2,8 @@ import diagnostics, {
     BuiltInDiagnosticEventFormatters,
 } from '@atweel/diagnostics';
 import consoleDiagnostics from '@atweel/diagnostics-console';
-import { Application } from 'components/Application';
-import { Dependency } from 'components/Dependency';
+import { Application } from 'internals/Application';
+import { ApplicationComponent } from 'components/ApplicationComponent';
 import { Container } from 'inversify';
 
 const container: Container = new Container();
@@ -21,7 +21,7 @@ diagnostics
 container.bind(Application)
     .toSelf();
 
-container.bind(Dependency)
+container.bind(ApplicationComponent)
     .toSelf();
 
 export default container;

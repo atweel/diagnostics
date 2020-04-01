@@ -2,7 +2,7 @@ import {
     Diagnostics,
 } from '@atweel/diagnostics';
 import capabilities from 'capabilities';
-import { Application } from 'components/Application';
+import { Application } from 'internals/Application';
 import container from 'container';
 import 'reflect-metadata';
 

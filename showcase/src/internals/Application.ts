@@ -6,13 +6,13 @@ import {
 } from '@atweel/diagnostics';
 
 import capabilities from 'capabilities';
-import { Dependency } from 'components/Dependency';
+import { ApplicationComponent } from 'components/ApplicationComponent';
 
 @injectable()
 class Application {
     constructor(
-        @inject(Dependency) @named('Dependency')
-        private readonly dependency: Dependency,
+        @inject(ApplicationComponent) @named('ApplicationComponent')
+        private readonly dependency: ApplicationComponent,
         @inject(capabilities.DIAGNOSTICS)
         private readonly diagnostics: Diagnostics,
     ) {

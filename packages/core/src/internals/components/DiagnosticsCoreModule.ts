@@ -21,7 +21,7 @@ interface DiagnosticsModuleExtensionApi {
     setEmitter(emitter: any): void;
 }
 
-class DiagnosticsModule extends CoreModule<DiagnosticsModuleExtensionApi, DiagnosticsModuleConfigurationApi> {
+class DiagnosticsCoreModule extends CoreModule<DiagnosticsModuleExtensionApi, DiagnosticsModuleConfigurationApi> {
 
     private formatter: DiagnosticEventFormatter =
         BuiltInDiagnosticEventFormatterMapping[BuiltInDiagnosticEventFormatters.LONG_STRICT_TEXT];
@@ -89,7 +89,7 @@ class DiagnosticsModule extends CoreModule<DiagnosticsModuleExtensionApi, Diagno
 }
 
 export {
-    DiagnosticsModule,
+    DiagnosticsCoreModule,
     DiagnosticsModuleExtensionApi,
     DiagnosticsModuleConfigurationApi,
 };

@@ -1,5 +1,6 @@
 import 'jest';
 import { It, Mock } from 'typemoq';
+
 import { Diagnostics } from '../conventions/Diagnostics';
 import { SafeDiagnosticsProxy } from './SafeDiagnosticsProxy';
 

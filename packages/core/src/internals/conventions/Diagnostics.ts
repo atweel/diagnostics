@@ -1,6 +1,6 @@
-type ErrorFactory = () => Error;
-
-type DefaultConstructibleError = new() => Error;
+interface DefaultConstructibleError {
+    new(): Error;
+}
 
 /**
  * Diagnostics interface declares methods for instrumenting your code with diagnostic messages and
@@ -30,16 +30,15 @@ interface Diagnostics {
     debug(message: string, tags?: string[], payload?: any): void;
     /**
      * Reports that the program has run into a non-recoverable error and aborts execution with the specified error.
-     * @param message The text message to output.
-     * @param tags An array of tags to label the message.
-     * @param payload An arbitrary object that contains additional information about the event.
      */
-    abort(error: Error | ErrorFactory): void;
-    // fail<TError extends DefaultConstructibleError>(): void;
+    abort(): void;
+    abort(message: string): void;
+    abort(error: Error): void;
+    abort(errorConstructor: DefaultConstructibleError): void;
+    abort(arg?: string | Error | DefaultConstructibleError | undefined): void;
 }
 
 export {
     Diagnostics,
-    ErrorFactory,
     DefaultConstructibleError,
 };

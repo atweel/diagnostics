@@ -21,7 +21,7 @@ interface DiagnosticsModuleExtensionApi {
     setEmitter(emitter: any): void;
 }
 
-class DiagnosticsModule extends CoreModule<DiagnosticsModuleExtensionApi, DiagnosticsModuleConfigurationApi> {
+class DiagnosticsCoreModule extends CoreModule<DiagnosticsModuleExtensionApi, DiagnosticsModuleConfigurationApi> {
 
     private formatter: DiagnosticEventFormatter =
         BuiltInDiagnosticEventFormatterMapping[BuiltInDiagnosticEventFormatters.LONG_STRICT_TEXT];
@@ -80,22 +80,16 @@ class DiagnosticsModule extends CoreModule<DiagnosticsModuleExtensionApi, Diagno
     }
 
     private grandGrandParentIsNamed(request: interfaces.Request): boolean {
-        return !!request.parentRequest
-            && !!request.parentRequest.parentRequest
-            && request.parentRequest.parentRequest.target.isNamed();
+        return !!request?.parentRequest?.parentRequest?.target.isNamed();
     }
 
     private extractGrandGrandParentName(context: interfaces.Context): string {
-        const namedTag = context.currentRequest.parentRequest
-            && context.currentRequest.parentRequest.parentRequest
-            && context.currentRequest.parentRequest.parentRequest.target.getNamedTag();
-
-        return namedTag && namedTag.value;
+        return context?.currentRequest?.parentRequest?.parentRequest?.target.getNamedTag()?.value;
     }
 }
 
 export {
-    DiagnosticsModule,
+    DiagnosticsCoreModule,
     DiagnosticsModuleExtensionApi,
     DiagnosticsModuleConfigurationApi,
 };

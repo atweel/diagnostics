@@ -1,5 +1,5 @@
 import capabilities from 'capabilities';
-import { Diagnostics, ErrorFactory } from 'conventions/Diagnostics';
+import { Diagnostics, DefaultConstructibleError } from 'conventions/Diagnostics';
 import unsafe from 'decorators/unsafe';
 import { inject, injectable } from 'inversify';
 import 'reflect-metadata';
@@ -12,6 +12,7 @@ class SafeDiagnosticsProxy implements Diagnostics {
     ) {
 
     }
+    
     public notify(message: string, tags?: string[] | undefined, payload?: any): void {
         try {
             this.target.notify(message, tags, payload);
@@ -19,6 +20,7 @@ class SafeDiagnosticsProxy implements Diagnostics {
             //  Suppress all errors.
         }
     }
+    
     public warn(message: string, tags?: string[] | undefined, payload?: any): void {
         try {
             this.target.warn(message, tags, payload);
@@ -26,6 +28,7 @@ class SafeDiagnosticsProxy implements Diagnostics {
             //  Suppress all errors.
         }
     }
+    
     public debug(message: string, tags?: string[] | undefined, payload?: any): void {
         try {
             this.target.debug(message, tags, payload);
@@ -33,8 +36,13 @@ class SafeDiagnosticsProxy implements Diagnostics {
             //  Suppress all errors.
         }
     }
-    public abort(error: Error | ErrorFactory): void {
-        this.target.abort(error);
+
+    public abort(): void;
+    public abort(message: string): void;
+    public abort(error: Error): void;
+    public abort(errorType: DefaultConstructibleError): void;
+    public abort(arg?: string | Error | DefaultConstructibleError | undefined): void {
+        this.target.abort(arg);
     }
 }
 

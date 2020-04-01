@@ -25,7 +25,6 @@ class EssentialExtensions implements ExtensionModule<{}, {}> {
 
                         args.contextInterceptor = (contexts: interfaces.Context): interfaces.Context => {
                             if (!contexts.currentRequest) {
-                                // tslint:disable-next-line: no-console
                                 console.log('dfsdfsd');
                             }
 

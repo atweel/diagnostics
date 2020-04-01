@@ -1,10 +1,10 @@
-import { DiagnosticsModule } from 'components/DiagnosticsModule';
+import { DiagnosticsCoreModule } from 'internals/components/DiagnosticsCoreModule';
 
-export * from './conventions/Diagnostics';
-export * from './conventions/DiagnosticEventEmitter';
+export * from './internals/conventions/Diagnostics';
+export * from './internals/conventions/DiagnosticEventEmitter';
 export * from './formatting';
 export { default as Capabilities } from './capabilities';
 export * from './common';
-export { default as unsafe } from 'decorators/unsafe';
-export * from 'components/DiagnosticsModule';
-export default new DiagnosticsModule();
+export { default as unsafe } from 'internals/decorators/unsafe';
+export * from 'internals/components/DiagnosticsCoreModule';
+export default new DiagnosticsCoreModule();

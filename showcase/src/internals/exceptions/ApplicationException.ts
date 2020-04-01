@@ -1,9 +1,9 @@
-class ApplicationError extends Error {
+class ApplicationException extends Error {
     constructor() {
         super('Application error occurred.');
     }
 }
 
 export {
-    ApplicationError,
+    ApplicationException,
 };

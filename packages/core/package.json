@@ -1,6 +1,6 @@
 {
   "name": "@atweel/diagnostics",
-  "version": "1.0.0",
+  "version": "1.0.1-beta.0",
   "description": "Diagnostics package by Atweel Inc.",
   "author": "Eduard Malakhov <eduard@atweel.com>",
   "homepage": "https://github.com/atweel/diagnostics#readme",

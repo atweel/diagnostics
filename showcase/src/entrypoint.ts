@@ -6,7 +6,6 @@ import { Application } from 'components/Application';
 import container from 'container';
 import 'reflect-metadata';
 
-// tslint:disable-next-line: no-console
 console.clear();
 
 //  This demonstrates how a diagnostic message looks like when Diagnostics is initialized

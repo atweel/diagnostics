@@ -1,4 +1,3 @@
-// tslint:disable: no-empty
 import {
     Diagnostics,
 } from 'conventions/Diagnostics';

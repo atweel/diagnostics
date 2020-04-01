@@ -1,6 +1,6 @@
 {
   "name": "@atweel/diagnostics-console",
-  "version": "1.1.0-alpha.0",
+  "version": "1.1.0-alpha.1",
   "description": "Extension packagee for console-based diagnostics by Atweel Inc.",
   "author": "Eduard Malakhov <eduard@atweel.com>",
   "homepage": "https://github.com/atweel/diagnostics#readme",
@@ -37,7 +37,7 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@atweel/diagnostics": "^1.1.0-alpha.0",
+    "@atweel/diagnostics": "^1.1.0-alpha.1",
     "@stackeat/extensibility": "^0.1.19",
     "inversify": "^5.0.1",
     "moment": "^2.24.0",

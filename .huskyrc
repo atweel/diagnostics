@@ -1,6 +1,7 @@
 {
     hooks: {
         "pre-commit": "yarn integrate",
-        "pre-merge": "git config merge.ours.driver true"
+        "pre-merge": "git config merge.ours.driver true",
+        'commit-msg': 'yarn commitlint -E HUSKY_GIT_PARAMS'
     }
 }

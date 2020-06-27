@@ -6,7 +6,7 @@ import { DefaultDiagnostics } from './DefaultDiagnostics';
 import { DiagnosticEventEmitter, EventCategory } from './../conventions/DiagnosticEventEmitter';
 import { UnknownException } from '@atweel/primitives';
 
-const EVENT_METHODS = [
+const EVENT_METHODS: Array<{ name: keyof DefaultDiagnostics; eventCategory: EventCategory}> = [
     {
         name: 'notify',
         eventCategory: EventCategory.NOTIFICATION,

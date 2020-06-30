@@ -41,10 +41,10 @@ function formatEventAsLongStrictText(timestamp: Moment,
     ].join(' ');
 }
 
-function formatEventAsLongFlexibleText(timestamp: Moment                             ,
-                                       category: EventCategory                             ,
-                                       message: string                             ,
-                                       origin: string | undefined                             ,
+function formatEventAsLongFlexibleText(timestamp: Moment,
+                                       category: EventCategory,
+                                       message: string,
+                                       origin: string | undefined,
                                        tags: string[]): string {
     return [
         timestamp.format('HH:mm:ss.SSS'),

@@ -24,6 +24,17 @@
     moment "^2.24.0"
     reflect-metadata "^0.1.13"
 
+"@atweel/diagnostics@^1.1.0-alpha.4":
+  version "1.1.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@atweel/diagnostics/-/diagnostics-1.1.0-beta.1.tgz#ecf1e704b0f5ddad42005f719d97bf576661a336"
+  integrity sha512-sogPL8brFGIWT2TdnHSbOrgB59Z2NAfohSHicnbvwd2ruopKRri1P7VMNPdPBQeB1JQGgj2xgy2kjbu60bKKmA==
+  dependencies:
+    "@atweel/primitives" "^1.0.0-beta.4"
+    "@stackeat/extensibility" "^0.1.19"
+    inversify "^5.0.1"
+    moment "^2.24.0"
+    reflect-metadata "^0.1.13"
+
 "@atweel/primitives@^1.0.0-beta.4":
   version "1.0.0-beta.4"
   resolved "https://registry.yarnpkg.com/@atweel/primitives/-/primitives-1.0.0-beta.4.tgz#507d71f8bdd5d8260ba335903960dd6321efe316"
@@ -5563,9 +5574,9 @@ modify-values@^1.0.0:
   integrity sha512-xV2bxeN6F7oYjZWTe/YPAy6MN2M+sL4u/Rlm2AHCIVGfo2p1yGmBHQ6vHehl4bRTZBdHu3TSkWdYgkwpYzAGSw==
 
 moment@^2.24.0:
-  version "2.27.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.27.0.tgz#8bff4e3e26a236220dfe3e36de756b6ebaa0105d"
-  integrity sha512-al0MUK7cpIcglMv3YF13qSgdAIqxHTO7brRtaz3DlSULbqfazqkc5kEjNrLDOM7fsjshoFIihnU8snrP7zUvhQ==
+  version "2.29.4"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
+  integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
